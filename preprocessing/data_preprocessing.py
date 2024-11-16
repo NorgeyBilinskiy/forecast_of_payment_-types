@@ -101,12 +101,22 @@ class text_preprocessor():
         tfidf_mat_compr = self.apply_PCA(tfidf_mat)
         return tfidf_mat_compr
 
-    def run(self):
+    def summation(self):
         processed_data = self.get_data()
         logger.info(f"Processed data shape: {processed_data.shape}")
+
         if len(processed_data.shape) != 2:
             raise ValueError("Processed data is not in the expected format!")
+
+        file_path = os.path.join(os.getcwd(), '../data/payments_training.tsv')
+        df = pd.read_csv(file_path, sep='\t', names=self.columns, index_col=False)
+        class_column = df.iloc[:, -1]
+
         processed_df = pd.DataFrame(processed_data)
+        processed_df['target'] = class_column.values
+        columns_order = ['target'] + [col for col in processed_df.columns if col != 'target']
+        processed_df = processed_df[columns_order]
+
         output_path = os.path.join(os.getcwd(), '../data', 'processed_data.tsv')
         processed_df.to_csv(output_path, sep='\t', index=False)
         logger.info("Successfully saved")
@@ -116,7 +126,7 @@ if __name__ == '__main__':
     try:
         logger.info('START_PREPROCESSING')
         data_processor = text_preprocessor()
-        data_processor.run()
+        data_processor.summation()
         logger.info('END_PREPROCESSING')
 
     except Exception as e:

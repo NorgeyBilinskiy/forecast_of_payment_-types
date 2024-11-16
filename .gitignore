@@ -1,2 +1,4 @@
 /data/*
 !/data/.gitkeep
+
+/hyperselection/catboost_info/

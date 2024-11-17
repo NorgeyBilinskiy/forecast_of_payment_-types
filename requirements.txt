@@ -1,9 +1,9 @@
 pandas==1.5.3
 numpy==1.23.5
 nltk==3.8
-pymorphy3==0.9.1
+pymorphy3==1.0.0
 scikit-learn==1.5.2
 bayesian-optimization==1.3.0
 lightgbm==3.3.2
 catboost==1.2
-loguru
+loguru==0.7.2

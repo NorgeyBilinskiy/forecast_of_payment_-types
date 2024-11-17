@@ -1,4 +1,10 @@
-/data/*
-!/data/.gitkeep
+/input_data/*
+!/input_data/.gitkeep
 
-/hyperselection/catboost_info/
+/output_data/*
+!/output_data/.gitkeep
+
+/src/temporary_data/*
+!/src/temporary_data/.gitkeep
+
+/src/predict_types/catboost_info/

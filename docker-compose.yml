@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  forecast_of_payment_types:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: forecast_payment_types
+    container_name: Forecast_Payment_Types
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - .:/app
+    command: ["python", "__main__.py"]

@@ -1,9 +1,0 @@
-{
-    "bootstrap": 0.0,
-    "max_depth": 20.063756403314922,
-    "max_features": 0.1,
-    "min_samples_leaf": 1.8751829403343598,
-    "min_samples_split": 10.94043278785658,
-    "n_estimators": 179.40950184603062,
-    "oob_score": 1.0
-}
